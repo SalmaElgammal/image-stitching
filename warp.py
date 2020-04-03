@@ -1,11 +1,12 @@
 import numpy as np
 
-def warp_inv (im, H):
-    imOut = np.zeros((im.shape[0], 2 * im.shape[1], im.shape[2])).astype(im.dtype)
-    imShape = imOut.shape
+
+def warp_inv(im, H):
+    imOut = np.zeros((im.shape[0], 2 * im.shape[1],
+                      im.shape[2])).astype(im.dtype)
     for i in range(0, imShape[0]):
         for j in range(0, imShape[1]):
-            dest_pt = np.array([i,j,1])
+            dest_pt = np.array([i, j, 1])
             src_pt = np.dot(np.linalg.inv(H), dest_pt)
             src_pt /= src_pt[2]
             src_i = int(src_pt[0])
@@ -14,5 +15,4 @@ def warp_inv (im, H):
                 imOut[i][j] = im[src_i][src_j]
             except:
                 None
-    print (imOut.shape)
     return imOut
