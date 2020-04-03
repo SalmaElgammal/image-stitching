@@ -8,10 +8,10 @@ def warp_inv(im, H):
         for j in range(0, imShape[1]):
             dest_pt = np.array([i, j, 1])
             src_pt = np.dot(np.linalg.inv(H), dest_pt)
-            src_pt /= src_pt[2]
+            src_pt /= src_pt[2]  # Convert to heterogeneous coordinates
             src_i = int(src_pt[0])
             src_j = int(src_pt[1])
-            try:
+            try:  # if src_i and src_j are within imOut boundaries
                 imOut[i][j] = im[src_i][src_j]
             except:
                 None

@@ -13,7 +13,6 @@ img2Clicks = []
 def click(event, x, y, flags, param):
     if event == 1:
         param.append(np.array([y, x]))
-        print([y, x])
 
 
 cv2.namedWindow('image')
@@ -29,7 +28,6 @@ while(1):
     if k > 0:
         break
 
-print()
 H = homography(img2Clicks, img1Clicks)
 imOut = warp(img2, H)
 
