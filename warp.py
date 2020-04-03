@@ -11,7 +11,7 @@ def warp_inv(im, H):
             src_pt /= src_pt[2]  # Convert to heterogeneous coordinates
             src_i = int(src_pt[0])
             src_j = int(src_pt[1])
-            try:  # if src_i and src_j are within imOut boundaries
+            try:  # if src_i and src_j are within im boundaries
                 imOut[i][j] = im[src_i][src_j]
             except:
                 None
