@@ -2,6 +2,11 @@
 
 Using image warping and homographies, an image mosaic is created.
 
+## Collaborators
+[@YomnaEldawy] (https://github.com/YomnaEldawy)
+[@SalmaElgammal] (https://github.com/SalmaElgammal)
+[@Fatma Mohamed Abd El-Aty] (https://github.com/Fatma-Mohamed-Abd-El-Aty)
+
 ## Getting started
 
 ### Prerequisites
